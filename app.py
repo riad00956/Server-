@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import os
 
 app = Flask(__name__)
-
-# ✅ Secure Secret Key
 app.secret_key = '9a8a76f4c33e443fab7b4d36f73edb9d2e9f181bc3f207eef1012deed15e8bd1'
 
 ADMIN_USERNAME = "admin"
@@ -11,7 +9,7 @@ ADMIN_PASSWORD = "1234"
 
 @app.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("home.html")  # Make sure home.html exists in templates/
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
